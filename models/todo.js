@@ -17,7 +17,5 @@ var todoSchema = new mongoose.Schema({
 
 var Todo = mongoose.model('Todo', todoSchema);
 
+module.exports = Todo;
 
-// name
-// completed
-// created_date
