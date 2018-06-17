@@ -31,5 +31,9 @@ router.get('/:todoId', function(req, res){
         res.send(err);
     })
 });
+
+router.put('/:todoId', function(req, res){
+    res.send("hi");
+});
   
 module.exports = router;
