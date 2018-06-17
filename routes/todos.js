@@ -11,5 +11,9 @@ router.get('/', function(req, res){
         res.send(err);
     })
 });
+
+router.post('/', function(req, res){
+    res.send("hi from the post");
+})
   
 module.exports = router;
