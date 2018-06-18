@@ -15,16 +15,26 @@ $(document).ready(function(){
 function addTodos(todos) {
     //add todos to the page
     todos.forEach(function(todo){
-        var newTodo = $('<li class="task">' + todo.name + '</li>');
+        addTodo(todo);
+    });
+}
+
+function addTodo(todo){
+    var newTodo = $('<li class="task">' + todo.name + '</li>');
         if(todo.completed){
             newTodo.addClass("done");
         }
         $('.list').append(newTodo);
-    });
-}
+    };
 
 function createTodo(){
     // send request to create
     var userInput = $('#todoInput').val();
    $.post('/api/todos',{name: userInput })
+   .then(function(newTodo){
+       addTodo(newTodo);
+   })
+   .catch(function(err){
+       console.log(err);
+   })
 }
